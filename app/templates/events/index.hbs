@@ -1,6 +1,6 @@
 <h1>Events</h1>
 <ul>
     {{#each model as |event|}}
-        <li>{{#link-to "events.show" event}}{{event.title}}{{/link-to}}</li>
+        <li><img src="{{event.thumbnail.url}}">{{#link-to "events.show" event}}{{event.title}}{{/link-to}}</li>
     {{/each}}
 </ul>

@@ -3,4 +3,7 @@
 <h2 class="event-name">{{model.name}}</h2>  
 <p class="event-description">
     {{model.description}}
+    {{moment-format model.start 'MM/DD/YY'}}
+    {{moment-format model.end 'MM/DD/YY'}}
+
 </p>
