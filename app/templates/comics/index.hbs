@@ -1,8 +1,7 @@
 <h1>Comics</h1>
+{{input value=q}}
 <ul>
     {{#each model as |comic|}}
         {{comic-card comic=comic}}
-        {{!-- <li><img src="{{comic.thumbnail.url}}">{{#link-to "comics.show" comic}}{{comic.title}}{{/link-to}}</li>
-        {{/comic-card}} --}}
     {{/each}}
 </ul>

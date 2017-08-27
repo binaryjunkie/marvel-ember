@@ -2,7 +2,7 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 const Image = Ember.Object.extend({
-  generateUrl(shape=standard,size=xlarge){
+  generateUrl(shape='standard',size='xlarge'){
     return `${this.get('path')}/${shape}_${size}.${this.get('extension')}`;
   },
   url: function(){

@@ -1,5 +1,7 @@
 <article class="comic-card">
-    <img src="{{comic.thumbnail.cardLarge}}" alt="">
-    {{comic.title}}
-    {{comic.description}}
+    {{#link-to "comics.show" comic}}
+        <img src="{{comic.thumbnail.cardLarge}}" alt="">
+        {{comic.title}}
+    {{/link-to}}
+    {{{comic.description}}}
 </article>

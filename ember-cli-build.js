@@ -21,5 +21,19 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  // Seriously? No glob support? WTF is this shenanniganary? I've gotta be missing something
+  // NOTE: n00b learned the hard way that not including 'vendor' dir in the path will keep
+  // the server trying to launch forever without warning - May happen with all bad paths..? 
+  app.import('vendor/fonts/BebasNeue Bold.otf')
+  app.import('vendor/fonts/BebasNeue Book.otf')
+  app.import('vendor/fonts/BebasNeue Light.otf')
+  app.import('vendor/fonts/BebasNeue Regular.otf')
+  app.import('vendor/fonts/BebasNeue Thin.otf')
+  app.import('vendor/fonts/Oswald-Bold.ttf')
+  app.import('vendor/fonts/Oswald-SemiBold.ttf')
+  app.import('vendor/fonts/Oswald-Regular.ttf')
+  app.import('vendor/fonts/Oswald-Medium.ttf')
+  app.import('vendor/fonts/Oswald-Light.ttf')
+  // app.import('vendor/fonts/Oswald-ExtraLight.ttf')
   return app.toTree();
 };
