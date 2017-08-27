@@ -1,0 +1,6 @@
+<h1>Characters</h1>
+<ul>
+    {{#each model as |character| }}
+        <li><img src="{{character.thumbnail.url}}">{{#link-to "characters.show" character}}{{character.name}}{{/link-to}}</li>
+    {{/each}}
+</ul>

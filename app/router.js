@@ -7,6 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('characters', function() {
+    this.route('show', {path: '/:id'});
+  });
+  this.route('events', function() {
+    this.route('show', {path: '/:id'});
+  });
 });
 
 export default Router;
