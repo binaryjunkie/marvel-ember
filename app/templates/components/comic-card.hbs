@@ -1,7 +1,4 @@
-<article class="comic-card">
-    {{#link-to "comics.show" comic}}
-        <img src="{{comic.thumbnail.cardLarge}}" alt="">
-        {{comic.title}}
-    {{/link-to}}
-    {{{comic.description}}}
-</article>
+{{#link-to "comics.show" comic}}
+    <img src="{{comic.thumbnail.cardLarge}}" alt="">
+    <h2>{{comic.title}}</h2>
+{{/link-to}}

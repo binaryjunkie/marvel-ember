@@ -24,16 +24,17 @@ module.exports = function(defaults) {
   // Seriously? No glob support? WTF is this shenanniganary? I've gotta be missing something
   // NOTE: n00b learned the hard way that not including 'vendor' dir in the path will keep
   // the server trying to launch forever without warning - May happen with all bad paths..? 
-  app.import('vendor/fonts/BebasNeue Bold.otf')
-  app.import('vendor/fonts/BebasNeue Book.otf')
-  app.import('vendor/fonts/BebasNeue Light.otf')
-  app.import('vendor/fonts/BebasNeue Regular.otf')
-  app.import('vendor/fonts/BebasNeue Thin.otf')
-  app.import('vendor/fonts/Oswald-Bold.ttf')
-  app.import('vendor/fonts/Oswald-SemiBold.ttf')
-  app.import('vendor/fonts/Oswald-Regular.ttf')
-  app.import('vendor/fonts/Oswald-Medium.ttf')
-  app.import('vendor/fonts/Oswald-Light.ttf')
+  app.import('vendor/fonts/BebasNeue_Bold.otf')
+  app.import('vendor/fonts/BebasNeue_Book.otf')
+  app.import('vendor/fonts/BebasNeue_Light.otf')
+  app.import('vendor/fonts/BebasNeue_Regular.otf')
+  app.import('vendor/fonts/BebasNeue_Thin.otf')
+  app.import('vendor/fonts/Oswald_Bold.ttf')
+  app.import('vendor/fonts/Oswald_SemiBold.ttf')
+  app.import('vendor/fonts/Oswald_Regular.ttf')
+  app.import('vendor/fonts/Oswald_Medium.ttf')
+  app.import('vendor/fonts/Oswald_Light.ttf')
   // app.import('vendor/fonts/Oswald-ExtraLight.ttf')
+  app.import('vendor/images/marvel_logo.svg')
   return app.toTree();
 };

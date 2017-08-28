@@ -1,7 +1,11 @@
-<h1>Comics</h1>
-{{input value=q}}
-<ul>
+<section class="header">
+    <h1>Comics</h1>
+    <div class="filter-bar">
+        {{input class="search" placeholder="Search Comics" value=q}}
+    </div>
+</section>
+<section class="comics">
     {{#each model as |comic|}}
         {{comic-card comic=comic}}
     {{/each}}
-</ul>
+</section>

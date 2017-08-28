@@ -11,47 +11,47 @@
 @font-face {
     font-family: 'Oswald';
     font-weight: 300;
-    src: url('/fonts/Oswald-Medium.ttf');
+    src: url('/fonts/Oswald_Medium.ttf');
 }
 @font-face {
     font-family: 'Oswald';
     font-weight: 500;
-    src: url('/fonts/Oswald-Regular.ttf');
+    src: url('/fonts/Oswald_Regular.ttf');
 }
 @font-face {
     font-family: 'Oswald';
     font-weight: 600;
-    src: url('/fonts/Oswald-SemiBold.ttf');
+    src: url('/fonts/Oswald_SemiBold.ttf');
 }
 @font-face {
     font-family: 'Oswald';
     font-weight: 700;
-    src: url('/fonts/Oswald-Bold.ttf');
+    src: url('/fonts/Oswald_Bold.ttf');
 }
 @font-face {
     font-family: 'BebasNeue';
     font-weight: 100;
-    src: url('/fonts/BebasNeue Thin.otf');
+    src: url('/fonts/BebasNeue_Thin.otf');
 }
 @font-face {
     font-family: 'BebasNeue';
     font-weight: 200;
-    src: url('/fonts/BebasNeue Light.otf');
+    src: url('/fonts/BebasNeue_Light.otf');
 }
 @font-face {
     font-family: 'BebasNeue';
     font-weight: 300;
-    src: url('/fonts/BebasNeue Book.otf');
+    src: url('/fonts/BebasNeue_Book.otf');
 }
 @font-face {
     font-family: 'BebasNeue';
     font-weight: 500;
-    src: url('/fonts/BebasNeue Regular.otf');
+    src: url('/fonts/BebasNeue_Regular.otf');
 }
 @font-face {
     font-family: 'BebasNeue';
     font-weight: 600;
-    src: url('/fonts/BebasNeue Bold.otf');
+    src: url('/fonts/BebasNeue_Bold.otf');
 }
 body {
     background-color: #101010;
@@ -60,8 +60,32 @@ body {
     padding: 0;
     font-family: 'Oswald';
 }
+#marvel-logo {
+    opacity:.4;
+}
 
-header {
+#marvel-logo path{
+    fill:#555;
+}
+
+#marvel-logo rect {
+    stroke: #555;
+    stroke-width: 10px;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:-1;
+    background: radial-gradient(#444, #101010);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#app-header {
     .container {
         margin: 0 auto;
     }
@@ -79,4 +103,112 @@ btn {
 
 a {
     color: #b5b5b5;
+}
+#app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 20px;
+    background-color: #2a2a2a;
+    box-shadow: 0 5px 10px -1px rgba(0,0,0,.5);
+    z-index: 20;
+    nav {
+        font-family: 'BebasNeue';
+        font-size: 22px;
+        color: #eaeaea;
+        a {
+            text-decoration: none;
+            margin-right:20px;
+            transition: color 250ms, padding-bottom 250ms, border 250ms;
+            // border-color: #fff;
+            // border-width: 0;
+            padding-bottom:4px;
+            &:hover {
+                // border-bottom-width:3px;
+                color: #fff;
+                // border-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0)) 1 100%;
+            }
+        }
+    }
+}
+#main-content {
+    padding-top: 60px;
+}
+#main-content > section.header {
+    padding: 20px;
+    margin-bottom:20px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    h1 {
+        flex:1;
+        font-size: 96px;
+        margin: 0;
+        color: rgba(99, 99, 99, .5);
+    }
+}
+.comics {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.comic-card {
+    display: flex;
+    flex: 0;
+    width:300px;
+    box-shadow:0 5px 12px 0 rgba(0,0,0,.5);
+    margin: 20px;
+    // background-color: #e0e0e0;
+    transition: transform 250ms;
+    position:relative;
+    &:hover {
+        transform:translate(0,-10px);
+        // & img {
+        //     // filter:grayscale(0%);
+        // }
+    }
+    img {
+        transition: filter 250ms;
+        filter:grayscale(35%);
+    }
+    a {
+        text-decoration: none;
+    }
+    h2 {
+        color: #e4cece;
+        padding: 8px 10px;
+        margin: 0;
+        text-decoration: none;
+        font-size:24px;
+        // display: none;    
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(107, 5, 5, 0.95);
+        justify-content: center;
+        align-items: center;
+        transition: opacity 250ms;
+        display: flex;
+    }
+    &:hover h2 {
+        opacity: 1;
+    }
+}
+
+input.search {
+    border: solid 0px transparent;
+    padding: 10px 16px;
+    font-size: 18px;
+    font-family: 'Oswald';
+    opacity: .5;
+    transition: 250ms opacity;
+    &:focus {
+        opacity:1;
+    }
 }
