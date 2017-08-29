@@ -5,6 +5,7 @@ export default Ember.Component.extend({
     limit: null,
     offset: null,
     total: null,
+    disabled: false,
 
     currentPage: Ember.computed('limit','offset', function(){
         return (this.get('offset')/this.get('limit')) + 1;

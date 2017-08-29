@@ -1,6 +1,17 @@
-<h1>Characters</h1>
-<ul>
+<section class="header">
+    <h1>Characters</h1>
+    {{!-- extract to filter bar component plz maybe? --}}
+    <div class="filter-bar">
+        {{input class="search" placeholder="Search Characters" value=q}}
+    </div>
+</section>
+{{loading-dialog active=isLoading}}
+<section class="characters resource-list">
     {{#each model as |character| }}
-        <li><img src="{{character.thumbnail.url}}">{{#link-to "characters.show" character}}{{character.name}}{{/link-to}}</li>
+        {{character-card character=character}}
     {{/each}}
-</ul>
+</section>
+{{!-- Extract to paging component plz --}}
+<footer class="pagination-bar">
+    {{pagination-bar routeName="characters.index" limit=model.meta.limit offset=model.meta.offset total=model.meta.total}}
+</footer>

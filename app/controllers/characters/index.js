@@ -1,6 +1,9 @@
 import Ember from 'ember';
 import PaginationControllerMixin from '../../mixins/pagination-controller';
 
+
+// NOTE: Can probably extract search into mixin and remaining page logic into mixin
+// So... do that.
 export default Ember.Controller.extend(PaginationControllerMixin, {
     search: null,
     q: Ember.computed.oneWay('search'),

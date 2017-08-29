@@ -25,7 +25,7 @@ export default DS.Model.extend({
     // dates (Array[ComicDate], optional): A list of key dates for this comic.,
     // prices (Array[ComicPrice], optional): A list of prices for this comic.,
     thumbnail: DS.attr('image'), // (Image, optional): The representative image for this comic.,
-    // images: (Array[Image], optional): A list of promotional images associated with this comic.,
+    images: DS.attr(), // (Array[Image], optional): A list of promotional images associated with this comic.,
     // creators (CreatorList, optional): A resource list containing the creators associated with this comic.,
     // characters (CharacterList, optional): A resource list containing the characters which appear in this comic.,
     // stories (StoryList, optional): A resource list containing the stories which appear in this comic.,

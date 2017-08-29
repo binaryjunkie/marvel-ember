@@ -1,6 +1,9 @@
-<h1>Character Details</h1>
-
-<h2 class="character-name">{{model.name}}</h2>  
-<p class="character-description">
-    {{model.description}}
-</p>
+<section class="header">
+    <h1>{{model.name}}</h1>
+</section>
+<section class="comic-detail resource">
+    <img src="{{model.thumbnail.cardLarge}}" alt="">
+    <p class="description">
+        {{{model.description}}}
+    </p>
+</section>

@@ -5,7 +5,8 @@
         {{input class="search" placeholder="Search Comics" value=q}}
     </div>
 </section>
-<section class="comics">
+{{loading-dialog active=isLoading}}
+<section class="comics resource-list">
     {{#each model as |comic|}}
         {{comic-card comic=comic}}
     {{/each}}

@@ -1,6 +1,15 @@
-<h1>Comic Details</h1>
-
-<h2 class="name">{{model.title}}</h2>  
-<p class="description">
-    {{{model.description}}}
-</p>
+<section class="header">
+    <h1>Comic Details</h1>
+</section>
+<section class="comic-detail resource">
+    <h2 class="name">{{model.title}}</h2>  
+    <p class="description">
+        {{{model.description}}}
+    </p>
+</section>
+<section class="images">
+    {{#each model.images as |image|}}
+    {{!-- imggthing --}}
+        {{marvel-image path=image.path extension=image.extension}}
+    {{/each}}
+</section>

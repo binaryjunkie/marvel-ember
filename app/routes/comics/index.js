@@ -16,4 +16,15 @@ export default Ember.Route.extend({
             return this.get('store').query('comic', {offset: params.offset});
         }
     },
+    actions: {
+        loading(transition, originRoute) {
+          let controller = this.controllerFor('comics.index');
+          controller.set('isLoading', true);
+          transition.promise.finally(function() {
+            Ember.run.later((function() {
+                controller.set('isLoading', false);
+            }), 250);
+          });
+        }
+      }
 });

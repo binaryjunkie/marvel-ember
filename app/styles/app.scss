@@ -132,8 +132,6 @@ a {
     padding-top: 60px;
 }
 #main-content > section.header {
-    padding: 20px;
-    margin-bottom:20px;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -145,20 +143,27 @@ a {
         color: rgba(99, 99, 99, .5);
     }
 }
-.comics {
+#main-content > section {
+    padding: 20px;
+    margin-bottom:20px;
+}
+#main-content .resource-list, .resource-list{
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom:60px;
 }
-.comic-card {
+// .comics {
+// }
+.resource-card {
     display: flex;
     flex: 0;
     width:300px;
     box-shadow:0 5px 12px 0 rgba(0,0,0,.5);
-    margin: 20px;
-    // background-color: #e0e0e0;
+    margin: 20px;   
     transition: transform 250ms;
     position:relative;
     &:hover {
@@ -203,6 +208,7 @@ input.search {
 }
 
 footer.pagination-bar {
+    z-index: 20;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -222,5 +228,17 @@ footer.pagination-bar {
             height:48px;
             line-height: 48px;
         }
+    }
+}
+.loading-dialog {
+    background-color: white;
+    position:fixed;
+    z-index:2;
+    height: 100vh;
+    width: 100vw;
+    bottom: -100vh;
+    transition: bottom 300ms;
+    &.active {
+        bottom:0;
     }
 }

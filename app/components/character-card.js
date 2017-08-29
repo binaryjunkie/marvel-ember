@@ -2,5 +2,5 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     tagName: 'article',
-    classNames: ['comic-card', 'resource-card'],
+    classNames: ['character-card', 'resource-card'],
 });
