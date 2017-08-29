@@ -1,0 +1,15 @@
+<span class="previous">
+    &nbsp;
+    {{#if isPrevious}}
+        {{#link-to routeName (query-params offset=prevOffset)}} &lt; Previous{{/link-to}}
+    {{/if}}
+</span>
+<span class="current">
+    {{currentPage}} of {{totalPages}}
+</span>
+<span class="next">
+    &nbsp;
+    {{#if isNext}}
+        {{#link-to routeName (query-params offset=nextOffset)}}Next &gt;{{/link-to}}
+    {{/if}}
+</span>

@@ -103,6 +103,11 @@ btn {
 
 a {
     color: #b5b5b5;
+    text-decoration: none;
+    transition: color 250ms;
+    &:hover {       
+        color: #fff;
+    }
 }
 #app-header {
     position: fixed;
@@ -114,22 +119,13 @@ a {
     box-shadow: 0 5px 10px -1px rgba(0,0,0,.5);
     z-index: 20;
     nav {
+        a {
+            margin-right:20px;
+            padding-bottom:4px;
+        }
         font-family: 'BebasNeue';
         font-size: 22px;
         color: #eaeaea;
-        a {
-            text-decoration: none;
-            margin-right:20px;
-            transition: color 250ms, padding-bottom 250ms, border 250ms;
-            // border-color: #fff;
-            // border-width: 0;
-            padding-bottom:4px;
-            &:hover {
-                // border-bottom-width:3px;
-                color: #fff;
-                // border-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0)) 1 100%;
-            }
-        }
     }
 }
 #main-content {
@@ -154,6 +150,7 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-bottom:60px;
 }
 .comic-card {
     display: flex;
@@ -166,13 +163,6 @@ a {
     position:relative;
     &:hover {
         transform:translate(0,-10px);
-        // & img {
-        //     // filter:grayscale(0%);
-        // }
-    }
-    img {
-        transition: filter 250ms;
-        filter:grayscale(35%);
     }
     a {
         text-decoration: none;
@@ -183,7 +173,6 @@ a {
         margin: 0;
         text-decoration: none;
         font-size:24px;
-        // display: none;    
         opacity: 0;
         position: absolute;
         top: 0;
@@ -210,5 +199,28 @@ input.search {
     transition: 250ms opacity;
     &:focus {
         opacity:1;
+    }
+}
+
+footer.pagination-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    text-align: center;
+    background-color:#2a2a2a;
+    box-shadow: 0 -2px 10px -1px rgba(0, 0, 0, 0.5);
+    font-family: 'BebasNeue';
+    font-size: 26px;
+    div  {
+        width:100%;
+        height:100%;
+        span {
+            display:inline-block;
+            width: 100px;
+            height:48px;
+            line-height: 48px;
+        }
     }
 }

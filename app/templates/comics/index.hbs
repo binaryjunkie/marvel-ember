@@ -1,5 +1,6 @@
 <section class="header">
     <h1>Comics</h1>
+    {{!-- extract to filter bar component plz maybe? --}}
     <div class="filter-bar">
         {{input class="search" placeholder="Search Comics" value=q}}
     </div>
@@ -9,3 +10,7 @@
         {{comic-card comic=comic}}
     {{/each}}
 </section>
+{{!-- Extract to paging component plz --}}
+<footer class="pagination-bar">
+    {{pagination-bar routeName="comics.index" limit=model.meta.limit offset=model.meta.offset total=model.meta.total}}
+</footer>
