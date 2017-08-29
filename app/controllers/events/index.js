@@ -1,9 +1,6 @@
 import Ember from 'ember';
 import PaginationControllerMixin from '../../mixins/pagination-controller';
 
-
-// NOTE: Can probably extract search into mixin and remaining page logic into mixin
-// So... do that.
 export default Ember.Controller.extend(PaginationControllerMixin, {
     search: null,
     q: Ember.computed.oneWay('search'),
@@ -19,12 +16,11 @@ export default Ember.Controller.extend(PaginationControllerMixin, {
         return Math.ceil(total/limit);
     }),
 
-    updateSearch(){
+    updateSearch: function() {
         this.set('search', this.get('q'));
         this.set('offset', 0);
     },
-    resetController(controller, isExiting, transition){
-        console.log("LEAVING CHARACTERS")
+    resetController(controller, isExiting, transition) {
         if (isExiting) {
             controller.set('search', null);
             controller.set('offset', 0);

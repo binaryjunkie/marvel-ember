@@ -8,7 +8,7 @@
 {{loading-dialog active=isLoading}}
 <section class="characters resource-list">
     {{#each model as |character| }}
-        {{character-card character=character}}
+        {{resource-card route="characters.show" resource=character image=character.thumbnail title=character.name}}
     {{/each}}
 </section>
 {{!-- Extract to paging component plz --}}

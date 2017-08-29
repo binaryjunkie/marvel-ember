@@ -1,6 +1,18 @@
-<h1>Events</h1>
-<ul>
+<section class="header">
+    <h1>Events</h1>
+    {{!-- extract to filter bar component plz maybe? --}}
+    <div class="filter-bar">
+        {{input class="search" placeholder="Search Events" value=q}}
+    </div>
+</section>
+{{loading-dialog active=isLoading}}
+<section class="events resource-list">
     {{#each model as |event|}}
-        <li><img src="{{event.thumbnail.url}}">{{#link-to "events.show" event}}{{event.title}}{{/link-to}}</li>
+        {{resource-card route="events.show" resource=event image=event.thumbnail title=event.title}}
     {{/each}}
-</ul>
+</section>
+{{!-- Extract to paging component plz --}}
+<footer class="pagination-bar">
+    {{pagination-bar routeName="events.index" limit=model.meta.limit offset=model.meta.offset total=model.meta.total}}
+</footer>
+
