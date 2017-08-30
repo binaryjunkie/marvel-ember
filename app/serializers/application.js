@@ -5,7 +5,7 @@ export default DS.RESTSerializer.extend({
         let results = {};
         results[primaryModelClass.modelName] = payload.data.results;
 
-        results = this._super(store, primaryModelClass, results, id, requestType);;
+        results = this._super(store, primaryModelClass, results, id, requestType);
         results.meta = {
             total: payload.data.total,
             offset: payload.data.offset,

@@ -1,9 +1,18 @@
 <section class="header">
-    <h1>{{model.name}}</h1>
+    <h1>Character Details</h1>
 </section>
-<section class="comic-detail resource">
-    <img src="{{model.thumbnail.cardLarge}}" alt="">
-    <p class="description">
-        {{{model.description}}}
-    </p>
+<section class="comic-detail resource-detail">
+    <article class="detail-image">
+        <img src="{{model.thumbnail.cardLarge}}" alt="">
+    </article>
+    <article class="details">
+        <h2 class="name">{{model.name}}</h2>  
+        <p class="description">
+            {{#if model.description}}
+                {{{model.description}}}
+            {{else}}
+                <span class="no-data">No description available</span>
+            {{/if}}
+        </p>
+    </article>
 </section>

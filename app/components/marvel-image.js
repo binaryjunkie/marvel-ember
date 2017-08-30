@@ -1,9 +1,27 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    // portrait_small	50x75px
+    // portrait_medium	100x150px
+    // portrait_xlarge	150x225px
+    // portrait_fantastic	168x252px
+    // portrait_uncanny	300x450px
+    // portrait_incredible	216x324px
+    sizes: {
+        xsmall: 'xsmall',
+        small: 'medium',
+        medium: 'fantastic',
+        large: 'incredible',
+        xlarge: 'uncanny',
+    },
+    shapes: {
+        portrait: 'portrait',
+        square: 'standard',
+        landscape: 'landscape',
+    },
     tagName: 'img',
-    size: 'xlarge',
-    shape: 'portrait',
+    size: 'medium',
+    shape: 'square',
     path: null,
     extension: null,
     attributeBindings: ['imgSrc:src'],
@@ -11,7 +29,8 @@ export default Ember.Component.extend({
         const size = this.get('size');
         const shape = this.get('shape');
         const path = this.get('path');
-        const extension = this.get('extension')
-        return `${path}/${shape}_${size}.${extension}`;
-    }).property(),
+        const extension = this.get('extension');
+        console.log('PROP CHANGED')
+        return `${path}/${this.get('shapes')[shape]}_${this.get('sizes')[size]}.${extension}`;
+    }),
 });

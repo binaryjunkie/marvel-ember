@@ -1,15 +1,23 @@
 <section class="header">
     <h1>Comic Details</h1>
 </section>
-<section class="comic-detail resource">
-    <h2 class="name">{{model.title}}</h2>  
-    <p class="description">
-        {{{model.description}}}
-    </p>
+<section class="comic-detail resource-detail">
+    <article class="detail-image">
+        <img src="{{model.thumbnail.cardLarge}}" alt="">
+    </article>
+    <article class="details">
+        <h2 class="name">{{model.title}}</h2>  
+        <p class="description">
+            {{#if model.description}}
+                {{{model.description}}}
+            {{else}}
+                <span class="no-data">No description available</span>
+            {{/if}}
+        </p>
+    </article>
 </section>
 <section class="images">
     {{#each model.images as |image|}}
-    {{!-- imggthing --}}
         {{marvel-image path=image.path extension=image.extension}}
     {{/each}}
 </section>

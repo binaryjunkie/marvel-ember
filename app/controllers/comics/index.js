@@ -4,7 +4,7 @@ import PaginationControllerMixin from '../../mixins/pagination-controller';
 export default Ember.Controller.extend(PaginationControllerMixin, {
     search: null,
     q: Ember.computed.oneWay('search'),
-
+    cardSize: 'xlarge',
 
     onFilter: Ember.observer('q', function() {
       Ember.run.debounce(this, this.updateSearch, 350);

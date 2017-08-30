@@ -2,8 +2,11 @@
 
 <h2 class="event-name">{{model.name}}</h2>  
 <p class="event-description">
-    {{model.description}}
+    {{#if model.description}}
+        {{{model.description}}}
+    {{else}}
+        <span class="no-data">No description available</span>
+    {{/if}}
     {{moment-format model.start 'MM/DD/YY'}}
-    {{moment-format model.end 'MM/DD/YY'}}
-
+    {{momen1t-format model.end 'MM/DD/YY'}}
 </p>

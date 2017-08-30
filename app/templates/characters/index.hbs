@@ -2,16 +2,28 @@
     <h1>Characters</h1>
     {{!-- extract to filter bar component plz maybe? --}}
     <div class="filter-bar">
+        <div class="grid-size">
+            <div class="btn-group">
+                <a class="btn" {{action "setSize" "small"}}>
+                    {{fa-icon "th" class="small"}}
+                </a>
+                <a class="btn" {{action "setSize" "medium"}}>
+                    {{fa-icon "th" class="medium"}}
+                </a>
+                <a class="btn" {{action "setSize" "xlarge"}}>
+                    {{fa-icon "th" class="large"}}
+                </a>
+            </div>
+        </div>
         {{input class="search" placeholder="Search Characters" value=q}}
     </div>
 </section>
 {{loading-dialog active=isLoading}}
 <section class="characters resource-list">
-    {{#each model as |character| }}
-        {{resource-card route="characters.show" resource=character image=character.thumbnail title=character.name}}
+    {{#each model as |character|}}
+        {{resource-card cardSize=cardSize route="characters.show" resource=character image=character.thumbnail title=character.name}}
     {{/each}}
 </section>
-{{!-- Extract to paging component plz --}}
 <footer class="pagination-bar">
     {{pagination-bar routeName="characters.index" limit=model.meta.limit offset=model.meta.offset total=model.meta.total}}
 </footer>
