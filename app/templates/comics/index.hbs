@@ -14,5 +14,5 @@
 </section>
 {{!-- Extract to paging component plz --}}
 <footer class="pagination-bar">
-    {{pagination-bar routeName="comics.index" limit=model.meta.limit offset=model.meta.offset total=model.meta.total}}
+    {{pagination-bar disabled=isLoading routeName="comics.index" limit=model.meta.limit offset=model.meta.offset total=model.meta.total}}
 </footer>

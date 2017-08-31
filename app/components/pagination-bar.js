@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    tagName: null,
+    classNameBindings: ['disabled'],
     limit: null,
     offset: null,
     total: null,

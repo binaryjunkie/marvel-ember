@@ -13,5 +13,5 @@
     {{/each}}
 </section>
 <footer class="pagination-bar">
-    {{pagination-bar routeName="characters.index" limit=model.meta.limit offset=model.meta.offset total=model.meta.total}}
+    {{pagination-bar disabled=isLoading routeName="characters.index" limit=model.meta.limit offset=model.meta.offset total=model.meta.total}}
 </footer>

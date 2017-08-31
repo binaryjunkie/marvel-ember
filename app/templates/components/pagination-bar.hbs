@@ -1,7 +1,11 @@
 <span class="previous">
     &nbsp;
     {{#if isPrevious}}
-        {{#link-to routeName (query-params offset=prevOffset)}} &lt; Previous{{/link-to}}
+        {{#unless disabled}}
+            {{#link-to routeName (query-params offset=prevOffset)}} &lt; Previous{{/link-to}}
+        {{else}}
+            &lt; Previous
+        {{/unless}}
     {{/if}}
 </span>
 <span class="current">
@@ -10,6 +14,10 @@
 <span class="next">
     &nbsp;
     {{#if isNext}}
-        {{#link-to routeName (query-params offset=nextOffset)}}Next &gt;{{/link-to}}
+        {{#unless disabled}}
+            {{#link-to routeName (query-params offset=nextOffset)}}Next &gt;{{/link-to}}
+        {{else}}
+            Next &gt;
+        {{/unless}}
     {{/if}}
-</span>
+</span> 
