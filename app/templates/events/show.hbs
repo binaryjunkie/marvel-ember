@@ -1,12 +1,19 @@
-<h1>Event Details</h1>
-
-<h2 class="event-name">{{model.name}}</h2>  
-<p class="event-description">
-    {{#if model.description}}
-        {{{model.description}}}
-    {{else}}
-        <span class="no-data">No description available</span>
-    {{/if}}
-    {{moment-format model.start 'MM/DD/YY'}}
-    {{momen1t-format model.end 'MM/DD/YY'}}
-</p>
+<section class="header">
+    <h1>Event Details</h1>
+</section>
+<section class="comic-detail resource-detail">
+    <article class="detail-image">
+        {{marvel-image size="xlarge" shape="portrait" path=model.thumbnail.path extension=model.thumbnail.extension}}
+    </article>
+    <article class="details">
+        <h2 class="name">{{model.title}}</h2>  
+        <h3>{{moment-format model.start 'MM/DD/YY'}} - {{moment-format model.end 'MM/DD/YY'}}</h3>
+        <p class="description">
+            {{#if model.description}}
+                {{{model.description}}}
+            {{else}}
+                <span class="no-data">No description available</span>
+            {{/if}}
+        </p>
+    </article>
+</section>

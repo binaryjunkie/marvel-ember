@@ -30,7 +30,6 @@ export default Ember.Component.extend({
         const shape = this.get('shape');
         const path = this.get('path');
         const extension = this.get('extension');
-        console.log('PROP CHANGED')
         return `${path}/${this.get('shapes')[shape]}_${this.get('sizes')[size]}.${extension}`;
     }),
 });

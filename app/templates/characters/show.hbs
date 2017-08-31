@@ -1,9 +1,9 @@
 <section class="header">
     <h1>Character Details</h1>
 </section>
-<section class="comic-detail resource-detail">
+<section class="character-detail resource-detail">
     <article class="detail-image">
-        <img src="{{model.thumbnail.cardLarge}}" alt="">
+        {{marvel-image size="xlarge" shape="portrait" path=model.thumbnail.path extension=model.thumbnail.extension}}
     </article>
     <article class="details">
         <h2 class="name">{{model.name}}</h2>  

@@ -17,7 +17,7 @@ export default Ember.Route.extend({
         }
     },
     actions: {
-        loading(transition, originRoute) {
+        loading(transition) {
           let controller = this.controllerFor('comics.index');
           controller.set('isLoading', true);
           transition.promise.finally(function() {

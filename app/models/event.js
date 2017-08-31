@@ -9,7 +9,7 @@ export default DS.Model.extend({
     // modified (Date, optional): The date the resource was most recently modified.,
     start: DS.attr('date'), // (Date, optional): The date of publication of the first issue in this event.,
     end: DS.attr('date'), // (Date, optional): The date of publication of the last issue in this event.,
-    thumbnail: DS.attr('image'), // (Image, optional): The representative image for this event.,
+    thumbnail: DS.attr(), // (Image, optional): The representative image for this event.,
     // comics (ComicList, optional): A resource list containing the comics in this event.,
     // stories (StoryList, optional): A resource list containing the stories in this event.,
     // series (SeriesList, optional): A resource list containing the series in this event.,

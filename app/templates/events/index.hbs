@@ -2,13 +2,14 @@
     <h1>Events</h1>
     {{!-- extract to filter bar component plz maybe? --}}
     <div class="filter-bar">
+        {{filter-bar cardSize=cardSize setSize=(action "setSize")}}
         {{input class="search" placeholder="Search Events" value=q}}
     </div>
 </section>
 {{loading-dialog active=isLoading}}
 <section class="events resource-list">
     {{#each model as |event|}}
-        {{resource-card route="events.show" resource=event image=event.thumbnail title=event.title}}
+        {{resource-card cardSize=cardSize route="events.show" resource=event image=event.thumbnail title=event.title}}
     {{/each}}
 </section>
 {{!-- Extract to paging component plz --}}

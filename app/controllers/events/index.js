@@ -20,10 +20,9 @@ export default Ember.Controller.extend(PaginationControllerMixin, {
         this.set('search', this.get('q'));
         this.set('offset', 0);
     },
-    resetController(controller, isExiting, transition) {
-        if (isExiting) {
-            controller.set('search', null);
-            controller.set('offset', 0);
+    actions: {
+        setSize(size){
+            this.set('cardSize', size);
         }
     },
 });

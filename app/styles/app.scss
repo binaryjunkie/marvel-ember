@@ -159,12 +159,33 @@ a {
 // .comics {
 // }
 .resource-card {
+    flex-grow: 0;
+    flex-shrink: 0;
+    &.portrait {
+        &.small {
+            flex-basis: 100px;
+            height: 150px;
+            h2 {
+                font-size: 14px;
+            }
+        }
+        &.medium {
+            flex-basis: 168px;
+            height: 252px;
+            h2 {
+                font-size:18px;
+            }
+        }
+        &.xlarge {
+            flex-basis: 300px;
+            height: 450px;
+        }
+    }
     display: flex;
     flex: 0;
-    width:300px;
     box-shadow:0 5px 12px 0 rgba(0,0,0,.5);
     margin: 20px;   
-    transition: transform 250ms;
+    transition: transform 250ms, height 250ms, flex-basis 250ms, width 250ms;
     position:relative;
     &:hover {
         transform:translate(0,-10px);
@@ -276,13 +297,20 @@ footer.pagination-bar {
     }
 }
 .loading-dialog {
-    background-color: white;
-    position:fixed;
-    z-index:2;
+    background-color: #c0c0c0;
+    position: fixed;
+    z-index: 2;
     height: 100vh;
     width: 100vw;
     bottom: -100vh;
     transition: bottom 300ms;
+    color: #a0a0a0;
+    font-size: 122px;
+    font-family: 'BebasNeue';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 1px rgba(255,255,255,1);
     &.active {
         bottom:0;
     }

@@ -2,19 +2,7 @@
     <h1>Characters</h1>
     {{!-- extract to filter bar component plz maybe? --}}
     <div class="filter-bar">
-        <div class="grid-size">
-            <div class="btn-group">
-                <a class="btn" {{action "setSize" "small"}}>
-                    {{fa-icon "th" class="small"}}
-                </a>
-                <a class="btn" {{action "setSize" "medium"}}>
-                    {{fa-icon "th" class="medium"}}
-                </a>
-                <a class="btn" {{action "setSize" "xlarge"}}>
-                    {{fa-icon "th" class="large"}}
-                </a>
-            </div>
-        </div>
+        {{filter-bar cardSize=cardSize setSize=(action "setSize")}}
         {{input class="search" placeholder="Search Characters" value=q}}
     </div>
 </section>

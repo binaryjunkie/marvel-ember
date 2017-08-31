@@ -17,7 +17,7 @@ export default Ember.Route.extend({
         }
     },
     actions: {
-        loading(transition, originRoute) {
+        loading(transition) {
           let controller = this.controllerFor('events.index');
           controller.set('isLoading', true);
           transition.promise.finally(function() {
@@ -26,5 +26,5 @@ export default Ember.Route.extend({
             }), 250);
           });
         }
-      }
+      },
 });

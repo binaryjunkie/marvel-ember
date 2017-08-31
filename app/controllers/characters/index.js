@@ -28,12 +28,5 @@ export default Ember.Controller.extend(PaginationControllerMixin, {
         setSize(size){
             this.set('cardSize', size);
         }
-    }
-    // resetController(controller, isExiting, transition){
-    //     console.log("LEAVING CHARACTERS")
-    //     if (isExiting) {
-    //         controller.set('search', null);
-    //         controller.set('offset', 0);
-    //     }
-    // },
+    },
 });
